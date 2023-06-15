@@ -22,7 +22,7 @@ int main() {
     printf("Enter the initial head position: ");
     scanf("%d", &initial);
 
-    for (i = 0; i < n; i++) {
+    for (i = 1; i < n; i++) {
         TotalHeadMoment = TotalHeadMoment + abs(RQ[i] - initial);
         initial = RQ[i];
     }

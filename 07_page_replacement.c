@@ -1,13 +1,8 @@
-/* 
-   NAME: LUNGADEKIRANSANJAY
-   ROLL NO.: 39
-   PRACTICAL NO.: 07
-   TITLE: PAGE REPLACEMENT ALGORITHM
-*/
+/*   TITLE: PAGE REPLACEMENT ALGORITHM */
+#include <stdio.h>
 
-#include<stdio.h>
-
-int main() {
+int main()
+{
     int i, j, n, ref_str[50], frame[10], no, k, avail, fcount = 0;
 
     printf("\nEnter the number of pages: ");
@@ -26,22 +21,28 @@ int main() {
     j = 0;
 
     printf("\nRef String\tPage Frames\tHit/Fault\n");
-    for (i = 1; i <= n; i++) {
+    for (i = 1; i <= n; i++)
+    {
         printf("%d\t\t", ref_str[i]);
 
         avail = 0;
-        for (k = 0; k < no; k++) {
-            if (frame[k] == ref_str[i]) {
+        for (k = 0; k < no; k++)
+        {
+            if (frame[k] == ref_str[i])
+            {
                 avail = 1;
                 break;
             }
         }
 
-        if (avail == 1) {
+        if (avail == 1)
+        {
             for (k = 0; k < no; k++)
                 printf("%d\t", frame[k]);
             printf("H");
-        } else {
+        }
+        else
+        {
             frame[j] = ref_str[i];
             j = (j + 1) % no;
             fcount++;
@@ -58,5 +59,3 @@ int main() {
 
     return 0;
 }
-
-
