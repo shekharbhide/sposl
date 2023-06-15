@@ -1,18 +1,17 @@
-/*   TITLE: PAGE REPLACEMENT ALGORITHM */
 #include <stdio.h>
 
 int main()
 {
     int i, j, n, ref_str[50], frame[10], no, k, avail, fcount = 0;
 
-    printf("\nEnter the number of pages: ");
+    printf("Enter the number of pages: ");
     scanf("%d", &n);
 
-    printf("\nEnter the page numbers: ");
+    printf("Enter the page numbers: ");
     for (i = 1; i <= n; i++)
         scanf("%d", &ref_str[i]);
 
-    printf("\nEnter the number of frames: ");
+    printf("Enter the number of frames: ");
     scanf("%d", &no);
 
     for (i = 0; i < no; i++)
@@ -39,7 +38,7 @@ int main()
         {
             for (k = 0; k < no; k++)
                 printf("%d\t", frame[k]);
-            printf("H");
+            printf("\t\tH");
         }
         else
         {
@@ -49,13 +48,13 @@ int main()
 
             for (k = 0; k < no; k++)
                 printf("%d\t", frame[k]);
-            printf("F");
+            printf("\t\tF");
         }
 
         printf("\n");
     }
 
-    printf("Page Fault Is %d\n", fcount);
+    printf("Page Faults: %d\n", fcount);
 
     return 0;
 }
